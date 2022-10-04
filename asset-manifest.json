@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/barayxuu/static/css/main.c258e074.css",
+    "main.js": "/barayxuu/static/js/main.082b6c53.js",
+    "static/js/787.324a3c92.chunk.js": "/barayxuu/static/js/787.324a3c92.chunk.js",
+    "index.html": "/barayxuu/index.html",
+    "main.c258e074.css.map": "/barayxuu/static/css/main.c258e074.css.map",
+    "main.082b6c53.js.map": "/barayxuu/static/js/main.082b6c53.js.map",
+    "787.324a3c92.chunk.js.map": "/barayxuu/static/js/787.324a3c92.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c258e074.css",
+    "static/js/main.082b6c53.js"
+  ]
+}
