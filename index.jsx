@@ -1,96 +1,81 @@
 import React, { useState } from "react";
-import "./Register.css";
+import iconSetting from "./assets/icon-settings.svg";
+import iconHome from "./assets/icon-home.svg";
+import iconBlock from "./assets/icon-blockchain.svg";
+import iconDatabase from "./assets/icon-database.svg";
+import iconSpeaker from "./assets/icon-speaker.svg";
+import iconFolder from "./assets/icon-folders.svg";
+import iconAcc from "./assets/icon-accounts.svg";
+import iconLock from "./assets/icon-lock.svg";
+import menu from "./assets/menu.png";
+import gue from "./assets/gue.png";
 
-function Register() {
-  const [username, setUsername] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
+import "./Home.css";
 
-  console.log({
-    username,
-    email,
-    password,
-    confirmPassword,
-  });
-
-  const handleSubmit = () => {
-    setUsername("");
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
-
-    if (!username && !email && !password && !confirmPassword ? true : false) {
-      alert("Harap Masukkan Inputan");
-    } else if (!email && !password && !confirmPassword ? true : false) {
-      alert("Harap Masukkan Inputan Yang Kosong");
-    } else if (!password && !confirmPassword ? true : false) {
-      alert("Harap Masukkan Inputan Yang Kosong");
-    } else if (!confirmPassword ? true : false) {
-      alert("Harap Masukkan Inputan Yang Kosong");
-    } else {
-      console.log("Submit");
-      alert("Anda Berhasil Mendaftar");
-    }
-  };
-
+function Home() {
+  const toggleSidebar = () => document.body.classList.toggle("open");
   return (
-    <div className="background">
-      <div className="registerBox">
-        <h2>Register</h2>
-        <form>
-          <div class="registerData">
-            <input
-              type="text"
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-            />
-            <label>Full Name</label>
-          </div>
-          <div class="registerData">
-            <input
-              type="email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <label>Email</label>
-          </div>
-          <div class="registerData">
-            <input
-              type="password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-            <label>Password</label>
-          </div>
-          <div class="registerData">
-            <input
-              type="password"
-              onChange={(e) => {
-                setConfirmPassword(e.target.value);
-              }}
-            />
-            <label>Confirm Password</label>
-          </div>
-          <button
-            type="button"
-            className="button"
-            // disabled={!confirmPassword && !email && !password && !username}
-            onClick={(e) => {
-              e.preventDefault();
-              handleSubmit();
-            }}
-          >
-            Submit
-          </button>
-        </form>
+    <body>
+      <div class="greetings">
+        <span>H</span>
+        <span>E</span>
+        <span>L</span>
+        <span>L</span>
+        <span>O</span>
       </div>
-    </div>
+      <div classname="ppGue">
+        <img class="pp" src={gue} />
+      </div>
+      <div class="greetings">
+        <span>P</span>
+        <span>E</span>
+        <span>O</span>
+        <span>P</span>
+        <span>L</span>
+        <span>E</span>
+      </div>
+
+      <nav class="sidebar">
+        <div class="sidebar-inner">
+          <header class="sidebar-header">
+            <button type="button" class="sidebarburger"></button>
+            <img src={menu} class="sidebar-logo" onClick={toggleSidebar} />
+            <span>Menu</span>
+          </header>
+          <nav class="sidebar-menu">
+            <button type="button">
+              <img src={iconHome} />
+              <span>Home</span>
+            </button>
+            <button type="button" class="has-border">
+              <img src={iconSetting} />
+              <span>Settings</span>
+            </button>
+            <button type="button">
+              <img src={iconBlock} />
+              <span>Github</span>
+            </button>
+            <button type="button">
+              <img src={iconSpeaker} />
+              <span>Spotify</span>
+            </button>
+            <button type="button">
+              <img src={iconFolder} />
+              <span>Folders</span>
+            </button>
+            <button type="button">
+              <img src={iconAcc} />
+              <span>Profile</span>
+            </button>
+            <button type="button">
+              <img src={iconLock} />
+              <span>Security</span>
+            </button>
+          </nav>
+        </div>
+      </nav>
+    </body>
   );
 }
 
-export default Register;
-
+export default Home;
